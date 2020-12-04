@@ -7,17 +7,20 @@ fn main() {
         .map(|l| l.parse().expect("failed to parse"))
         .collect();
 
+    // Part 1:
     // let (first, second) = find_two(contents);
     // println!("first: {}, second: {}", first, second);
     // let product = first * second;
     // println!("product: {}", product);
 
+    // Part 2:
     let (first, second, third) = find_three(contents);
     println!("first: {}, second: {}, third: {}", first, second, third);
     let product = first * second * third;
     println!("product: {}", product);
 }
 
+// Part 1:
 // Find two numbers that sum to 2020
 fn find_two(numbers: Vec<u64>) -> (u64, u64) {
     let length = numbers.len();
@@ -30,7 +33,7 @@ fn find_two(numbers: Vec<u64>) -> (u64, u64) {
 
                 let sum = x + y;
                 if sum == 2020 {
-                    return (x, y)
+                    return (x, y);
                 }
             }
         }
@@ -38,6 +41,7 @@ fn find_two(numbers: Vec<u64>) -> (u64, u64) {
     (0, 0)
 }
 
+// Part 2:
 // Find three numbers that sum to 2020
 fn find_three(numbers: Vec<u64>) -> (u64, u64, u64) {
     let length = numbers.len();
@@ -52,7 +56,7 @@ fn find_three(numbers: Vec<u64>) -> (u64, u64, u64) {
                         let z = numbers[k];
                         let sum = x + y + z;
                         if sum == 2020 {
-                            return (x, y, z)
+                            return (x, y, z);
                         }
                     }
                 }
